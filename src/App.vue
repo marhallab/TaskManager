@@ -18,7 +18,7 @@ onBeforeMount(()=>{
 <template>
   <main>
     <div v-for="(board, idx) in listBoards" :key="idx">
-      <p>{{ board.name }}</p>
+      <p class="text-3xl font-bold underline">{{ board.name }}</p>
     </div>
   </main>
 </template>
