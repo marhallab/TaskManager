@@ -1,7 +1,7 @@
-@import 'functions';
+@import 'functions', 'colors';
 
 .sidebar {
     height: 100%;
     width: toRem(300);
-    border: 1px solid black;
+    border: toRem(1) solid $light-grey;
 }

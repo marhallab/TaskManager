@@ -1,4 +1,3 @@
-//TODO: Create a method to update listBoards in localstorage if any data inside of listBoards changes (add, update or delete board)
 //TODO: Create a method to update the name of a board inside of listBoard
 //TODO: Create a method to delete a board inside of listBoard 
 
