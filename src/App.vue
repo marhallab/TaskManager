@@ -1,17 +1,24 @@
 <script setup lang="ts">
-import { onBeforeMount } from 'vue';
+import { watch, onBeforeMount } from 'vue';
+import { storeToRefs } from 'pinia'
 import { useTaskManagerStore } from '@/stores/index'
 
 const taskManager = useTaskManagerStore()
+const { listBoards } = storeToRefs(taskManager)
+
+watch(listBoards, () =>{
+  taskManager.updateListBoards();
+})
 
 onBeforeMount(()=>{
   taskManager.initialize();
-  console.log(taskManager.getBoardById(2))
 })
 </script>
 
 <template>
   <main>
-    <p>test</p>
+    <div v-for="(board, idx) in listBoards" :key="idx">
+      <p>{{ board.name }}</p>
+    </div>
   </main>
 </template>

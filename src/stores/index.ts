@@ -4,16 +4,7 @@
 
 
 import { defineStore } from 'pinia'
-
-class Board {
-  id: number;
-  name: string;
-
-  constructor(id: number, name: string) {
-    this.id = id;
-    this.name = name;
-  }
-}
+import Board from '@/models/board'
 
 export const useTaskManagerStore = defineStore('taskManager', {
   state: () => {
@@ -44,7 +35,7 @@ export const useTaskManagerStore = defineStore('taskManager', {
       this.listBoards.push(newBoard)
     },
 
-    updateBoard() {
+    updateListBoards() {
       window.localStorage.setItem('listBoards', JSON.stringify(this.listBoards));
     }
   }
