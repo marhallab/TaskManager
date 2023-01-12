@@ -2,6 +2,55 @@
 
 .sidebar {
     height: 100%;
+    position: fixed;
     width: toRem(300);
     border: toRem(1) solid $light-grey;
+    transition: 0.25s width ease-in;
+
+    &.-close {
+        width: toRem(0);
+        transition: 0.25s width ease-in;
+
+        div {
+            display: none;
+        }
+    }
+
+    &__board {
+        cursor: pointer;
+        width: 85%;
+
+        h4 {
+            color: $grey;
+        }
+
+        &:hover,
+        &:active {
+            background-color: $purple;
+            border-top-right-radius: toRem(100);
+            border-bottom-right-radius: toRem(100);
+
+            h4 {
+                color: $white;
+            }
+
+            svg path {
+                fill: $white;
+            }
+        }
+
+    }
+
+    &__add {
+
+        cursor: pointer;
+
+        h4 {
+            color: $purple;
+        }
+
+        svg path {
+            fill: $purple;
+        }
+    }
 }

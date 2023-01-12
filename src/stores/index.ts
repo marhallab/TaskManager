@@ -10,7 +10,8 @@ export const useTaskManagerStore = defineStore('taskManager', {
     return {
       listBoards: [] as Array<Board>,
       currentBoard: {} as Board,
-      latestBoardId: 0 as number
+      latestBoardId: 0 as number,
+      isNavBarOpen: true as boolean
     }
   },
 

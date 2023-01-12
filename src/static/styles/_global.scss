@@ -1,14 +1,75 @@
 //TODO: Init typographie configuration
-//TODO: Add Plus Jakarta Sans Font 
+//TODO: Add Plus Jakarta Sans Font
+
+@import 'colors';
 
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    font-family: 'Jakarta';
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 23px;
+    color: $black;
 }
 
 html,
 body,
 #app {
     height: 100%;
+}
+
+h2 {
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 30px;
+}
+
+h3 {
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 23px;
+}
+
+h4 {
+    font-weight: 700;
+    font-size: 15px;
+    line-height: 19px;
+}
+
+h5 {
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 15px;
+    letter-spacing: 2.4px;
+    color: $grey;
+}
+
+.text-medium {
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 23px;
+}
+
+.text-bold {
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 15px;
+}
+
+/** Fonts **/
+
+// Jakarta Font
+@font-face {
+    font-family: 'Jakarta';
+    font-weight: 500;
+    src: url(@/assets/fonts/jakarta/PlusJakartaSans-Medium.ttf) format('truetype');
+}
+
+
+@font-face {
+    font-family: 'Jakarta';
+    font-weight: 700;
+    src: url(@/assets/fonts/jakarta/PlusJakartaSans-Bold.ttf) format('truetype');
 }
