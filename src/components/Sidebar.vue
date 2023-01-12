@@ -1,3 +1,4 @@
+<!-- TODO: handle sidebar responsiveness  -->
 <template>
     <aside :class="isNavBarOpen ? 'sidebar' : 'sidebar -close'">
         <div class="font-bold text-4xl flex flex-col justify-center items-center" style="height: 7%;">Task Manager</div>

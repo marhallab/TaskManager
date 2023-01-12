@@ -1,0 +1,9 @@
+.header {
+    border: toRem(1) solid $light-grey;
+
+    &__settings {
+        svg {
+            cursor: pointer;
+        }
+    }
+}

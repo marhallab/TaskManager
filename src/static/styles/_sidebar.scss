@@ -2,8 +2,8 @@
 
 .sidebar {
     height: 100%;
-    position: fixed;
     width: toRem(300);
+    min-width: toRem(300);
     border: toRem(1) solid $light-grey;
     transition: 0.25s width ease-in;
 
