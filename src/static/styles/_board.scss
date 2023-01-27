@@ -1,1 +1,18 @@
-.board {}
+@import 'functions', 'colors';
+
+.board {
+
+    overflow-y: scroll;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+
+    &::-webkit-scrollbar {
+        display: none;
+    }
+
+
+    &__content {
+        background-color: $very-light-grey;
+    }
+
+}

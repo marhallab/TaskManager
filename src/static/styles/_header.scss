@@ -1,5 +1,12 @@
+@import 'functions', 'colors';
+
 .header {
     border: toRem(1) solid $light-grey;
+    position: sticky;
+    top: 0;
+    z-index: 2;
+    background-color: $white;
+
 
     &__settings {
         svg {
