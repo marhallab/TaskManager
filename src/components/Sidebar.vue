@@ -1,5 +1,7 @@
 <!--
     TODO: handle sidebar responsiveness
+    TODO: Add modal to create new board
+    TODO: Add logic to create new board
 -->
 <template>
     <aside :class="isNavBarOpen ? 'sidebar' : 'sidebar -close'">
@@ -16,12 +18,16 @@
                     <h4 class="ml-4">+ Create New Board</h4>
                 </div> 
             </div> 
+            <button @click="isOpen = true">Show modal</button>
             <div class="pl-8 my-2 flex items-center cursor-pointer" style="min-height:20px;" @click="isNavBarOpen = !isNavBarOpen">
                 <EyeIcon/>
                 <h4 class="ml-4">Hide Sidebar</h4>
             </div> 
         </div>
-
+        
+        <Modal :open="isOpen" @close="isOpen = !isOpen">
+                <p>test</p>
+        </Modal>
     </aside>
 </template>
 
@@ -29,6 +35,7 @@
 <script setup lang="ts">
     import BoardIcon from '@/assets/icons/BoardIcon.vue'
     import EyeIcon from '@/assets/icons/EyeIcon.vue'
+    import Modal from '@/components/Modal.vue'
 
 
     import { ref } from 'vue'
@@ -37,5 +44,7 @@
 
     const taskManager = useTaskManagerStore()
     const { listBoards, currentBoard, isNavBarOpen } = storeToRefs(taskManager)
+
+    const isOpen = ref(false);
 
 </script>
