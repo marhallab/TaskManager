@@ -47,6 +47,11 @@ h5 {
     color: $grey;
 }
 
+input {
+    border: 1px solid rgba(130, 143, 163, 0.25);
+    padding: 0.65rem;
+}
+
 .text-medium {
     font-weight: 500;
     font-size: 13px;
@@ -58,6 +63,14 @@ h5 {
     font-size: 12px;
     line-height: 15px;
 }
+
+.text-bold {
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 15px;
+}
+
+
 
 /** Fonts **/
 

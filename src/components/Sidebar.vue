@@ -18,15 +18,20 @@
                     <h4 class="ml-4">+ Create New Board</h4>
                 </div> 
             </div> 
-            <button @click="isOpen = true">Show modal</button>
+            <button @click="isModalOpen = true">Show modal</button>
             <div class="pl-8 my-2 flex items-center cursor-pointer" style="min-height:20px;" @click="isNavBarOpen = !isNavBarOpen">
                 <EyeIcon/>
                 <h4 class="ml-4">Hide Sidebar</h4>
             </div> 
         </div>
         
-        <Modal :open="isOpen" @close="isOpen = !isOpen">
-                <p>test</p>
+        <Modal :open="isModalOpen" @close="isModalOpen = false">
+                <h3 class="mb-6">Add New Board</h3>
+                <div class="flex flex-col">
+                    <label for="nameBoard" class="text-bold text-grey mb-3">Name</label>
+                    <input id="nameBoard" type="text" placeholder="e.g Web Design">
+                </div>
+                <button class="button -primary mt-6" type="button" @click="isModalOpen = false">Create New Board</button>
         </Modal>
     </aside>
 </template>
@@ -42,9 +47,9 @@
     import { useTaskManagerStore } from '@/stores/index'
     import { storeToRefs } from 'pinia'
 
-    const taskManager = useTaskManagerStore()
-    const { listBoards, currentBoard, isNavBarOpen } = storeToRefs(taskManager)
-
-    const isOpen = ref(false);
+    const taskManager = useTaskManagerStore();
+    const { listBoards, currentBoard, isNavBarOpen } = storeToRefs(taskManager);
+    
+    const isModalOpen = ref(false);
 
 </script>

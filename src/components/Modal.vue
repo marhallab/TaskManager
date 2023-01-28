@@ -4,8 +4,10 @@
         <transition name="drop-in">
           <div class="modal__inner" v-show="open">
             <div class="modal__content">
-              <slot />
-              <button type="button" @click="close">Close</button>
+                <div class="text-right">
+                    <span class="cursor-pointer select-none" @click="close()" style="font-size: 3rem; height: auto; margin-top:-10rem;">&times;</span>
+                </div>
+                <div><slot /></div>
             </div>
           </div>
         </transition>
@@ -29,7 +31,7 @@
         emit('close')
     }
 
-    const handleKeyup = (event) => {
+    const handleKeyup = (event:any) => {
         if (event.keyCode === 27) {
         close();
         }
@@ -61,10 +63,9 @@
         &__content{
             position: relative;
             background-color: #fff;
-            border: 1px solid rgba(0, 0, 0, 0.3);
             background-clip: padding-box;
             border-radius: 0.3rem;
-            padding: 1rem;
+            padding: 2.5rem;
         }
     }
     

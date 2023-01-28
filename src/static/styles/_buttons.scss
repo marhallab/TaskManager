@@ -1,1 +1,30 @@
 //TODO: Create class for all types of button in design system
+@import 'colors', 'functions';
+
+.button {
+    min-width: toRem(255);
+    width: 100%;
+    padding: 0.85rem;
+    border-radius: 2rem;
+    text-align: center;
+    cursor: pointer;
+    font-weight: 700;
+
+    &.-primary {
+        background-color: $purple;
+        color: $white;
+
+        &:hover {
+            background-color: $light-purple;
+        }
+    }
+
+    &.-secondary {
+        background-color: rgba($purple, 0.1);
+        color: $purple;
+
+        &:hover {
+            background-color: rgba($purple, 0.25);
+        }
+    }
+}
