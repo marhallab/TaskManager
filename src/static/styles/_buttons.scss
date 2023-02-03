@@ -17,6 +17,12 @@
         &:hover {
             background-color: $light-purple;
         }
+
+        &.-disabled {
+            background-color: $light-purple;
+            pointer-events: none;
+            cursor: none;
+        }
     }
 
     &.-secondary {
@@ -27,4 +33,5 @@
             background-color: rgba($purple, 0.25);
         }
     }
+
 }

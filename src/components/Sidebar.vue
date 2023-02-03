@@ -1,6 +1,5 @@
 <!--
     TODO: handle sidebar responsiveness
-    TODO: Add modal to create new board
     TODO: Add logic to create new board
 -->
 <template>
@@ -13,12 +12,13 @@
                     <BoardIcon />
                     <h4 class="ml-4" @click="currentBoard = board">{{ board.name }}</h4>
                 </div> 
-                <div class="sidebar__add flex items-center pl-8 py-4">
-                    <BoardIcon />
-                    <h4 class="ml-4">+ Create New Board</h4>
+                <div class="sidebar__add  pl-8 py-4 hover:opacity-80">
+                    <button class="flex items-center" @click="isModalOpen = true">
+                        <BoardIcon />
+                        <h4 class="ml-4">+ Create New Board</h4>
+                    </button>
                 </div> 
             </div> 
-            <button @click="isModalOpen = true">Show modal</button>
             <div class="pl-8 my-2 flex items-center cursor-pointer" style="min-height:20px;" @click="isNavBarOpen = !isNavBarOpen">
                 <EyeIcon/>
                 <h4 class="ml-4">Hide Sidebar</h4>
@@ -29,9 +29,9 @@
                 <h3 class="mb-6">Add New Board</h3>
                 <div class="flex flex-col">
                     <label for="nameBoard" class="text-bold text-grey mb-3">Name</label>
-                    <input id="nameBoard" type="text" placeholder="e.g Web Design">
+                    <input id="nameBoard" type="text" placeholder="e.g Web Design" v-model="newBoardName">
                 </div>
-                <button class="button -primary mt-6" type="button" @click="isModalOpen = false">Create New Board</button>
+                <button :class="newBoardName !== '' ? 'button -primary mt-6':'button -primary -disabled mt-6'" type="button" @click="addNewBoard(newBoardName)">Create New Board</button>
         </Modal>
     </aside>
 </template>
@@ -47,9 +47,15 @@
     import { useTaskManagerStore } from '@/stores/index'
     import { storeToRefs } from 'pinia'
 
-    const taskManager = useTaskManagerStore();
-    const { listBoards, currentBoard, isNavBarOpen } = storeToRefs(taskManager);
+    var taskManager = useTaskManagerStore();
+    var { listBoards, currentBoard, isNavBarOpen } = storeToRefs(taskManager);
     
-    const isModalOpen = ref(false);
+    var isModalOpen = ref(false);
+    var newBoardName = ref("");
+
+    const addNewBoard = (name : string) =>{
+        taskManager.addBoard(name);
+        isModalOpen = ref(false);
+    }
 
 </script>
