@@ -1,6 +1,5 @@
 <!--
     TODO: handle sidebar responsiveness
-    TODO: Add logic to create new board
 -->
 <template>
     <aside :class="isNavBarOpen ? 'sidebar' : 'sidebar -close'">
@@ -8,7 +7,7 @@
         <div class="flex flex-col justify-between" style="height: 90%;">
             <div class="sidebar__content">
                 <h5 class="pl-8 py-6">ALL BOARDS ({{ listBoards.length }})</h5>
-                <div class="sidebar__board flex items-center pl-8 py-4" v-for="(board, idx) in listBoards" :key="idx">
+                <div :class="currentBoard.id !== board.id ? 'sidebar__board flex items-center pl-8 py-4':'sidebar__board -active flex items-center pl-8 py-4'" v-for="(board, idx) in listBoards" :key="idx" @click="taskManager.setCurrentBoard(board.id)">
                     <BoardIcon />
                     <h4 class="ml-4" @click="currentBoard = board">{{ board.name }}</h4>
                 </div> 

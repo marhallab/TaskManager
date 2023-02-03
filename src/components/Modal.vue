@@ -57,7 +57,7 @@
 
         &__inner{
             max-width: 500px;
-            margin: 2rem auto;
+            margin: 15rem auto;
         }
 
         &__content{

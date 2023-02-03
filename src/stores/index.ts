@@ -33,10 +33,15 @@ export const useTaskManagerStore = defineStore('taskManager', {
       this.latestBoardId++
       const newBoard = new Board(this.latestBoardId, name);
       this.listBoards.push(newBoard)
+      this.updateListBoards()
     },
 
     updateListBoards() {
       window.localStorage.setItem('listBoards', JSON.stringify(this.listBoards));
+    },
+
+    setCurrentBoard(id: number) {
+      this.currentBoard = this.getBoardById(id);
     }
   }
 })

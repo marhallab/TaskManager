@@ -9,14 +9,6 @@
     margin-left: 0;
     transition: 0.25s all ease-in;
 
-    // overflow-y: scroll;
-    // -ms-overflow-style: none;
-    // scrollbar-width: none;
-
-    // &::-webkit-scrollbar {
-    //     display: none;
-    // }
-
     &.-close {
         margin-left: toRem(-300);
         transition: 0.25s all ease-in;
@@ -41,7 +33,7 @@
         }
 
         &:hover,
-        &:active {
+        &.-active {
             background-color: $purple;
             border-top-right-radius: toRem(100);
             border-bottom-right-radius: toRem(100);
